@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bodyColor: #fff;
+  --Bcardbg: #fff;
+  --Bchfcolor: #7c7c7c;
+  --Bchfbg: #dedede80;
+  --Bctextcolor: #000;
+  --Bcborder: #dddddd;
+  --shadowColor: rgba(0, 0, 0, 0.3);
+}
+.dark-mode {
+  --bodyColor: #222222;
+  --Bcardbg: #191a19;
+  --Bchfcolor: #bdc1c6;
+  --Bchfbg: #000000;
+  --Bctextcolor: #fff;
+  --Bcborder: #000000;
+  --shadowColor: rgba(255, 255, 255, 0.3);
+}
+body {
+  background-color: var(--bodyColor);
+}
+#darkMode {
+  position: fixed;
+  right: 1%;
+  top: 1%;
+  width: 30px;
+  cursor: pointer;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 0.5rem;
+}
+header {
+  border-bottom: 1px solid var(--Bcborder);
+  padding: 1rem 0;
+}
+header h1 {
+  text-align: center;
+  font-size: 1.5;
+  color: var(--Bctextcolor);
+}
+.card-group {
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--Bctextcolor);
+}
+.card {
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px transparent;
+  border-radius: 10px;
+  background-color: var(--Bcardbg);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-10%);
+  box-shadow: var(--shadowColor) 0px 1px 1px 0px inset,
+    var(--shadowColor) 0px 50px 100px -20px,
+    var(--shadowColor) 0px 30px 60px -30px;
+}
+.card-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--Bchfcolor);
+  background-color: var(--Bchfbg);
+  padding: 0.5rem 0;
+  margin: -0.5rem -0.5rem 0rem -0.5rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.card-header :is(h1, h2, h3, h4, h5, h6) {
+  font-size: 1.5rem;
+}
+.card-body {
+  padding: 0.5rem 0;
+}
+.card-body img {
+  width: 100%;
+  margin-top: -0.5rem;
+  margin-bottom: -0.5rem;
+}
+.card-footer {
+  background-color: var(--Bchfbg);
+  padding: 0.5rem 0;
+  margin: 0rem -0.5rem -0.5rem -0.5rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-weight: bold;
+}
+.card-footer a {
+  color: var(--Bchfcolor);
+}
+/* responsive mode */
+@media only screen and (max-width: 900px) {
+  .card-group {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .card-group {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .card-group {
+    grid-template-columns: 1fr;
+  }
+}
